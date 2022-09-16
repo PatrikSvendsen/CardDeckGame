@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository;
 
@@ -10,9 +11,10 @@ using Repository;
 namespace CardDeckGame.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20220916130257_AddedHistoryClass")]
+    partial class AddedHistoryClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,16 +35,10 @@ namespace CardDeckGame.Migrations
                     b.Property<int>("CardDeckId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ImgName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Suit")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Value")
@@ -53,17 +49,6 @@ namespace CardDeckGame.Migrations
                     b.HasIndex("CardDeckId");
 
                     b.ToTable("Cards");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CardDeckId = 1,
-                            ImgName = "",
-                            Name = "Ace of Hearts",
-                            Suit = "Hearts",
-                            Value = 1
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.CardDeck", b =>
@@ -75,12 +60,7 @@ namespace CardDeckGame.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("ImgName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TotalCards")
@@ -89,15 +69,6 @@ namespace CardDeckGame.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CardDecks");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ImgName = "",
-                            Name = "JackOfAllTrades",
-                            TotalCards = 52
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.History", b =>
