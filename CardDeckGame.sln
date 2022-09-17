@@ -16,21 +16,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardDeckGame", "CardDeckGame\CardDeckGame.csproj", "{860B2DF0-1C99-4846-933E-DA866B9FB32D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardDeckGame", "CardDeckGame\CardDeckGame.csproj", "{860B2DF0-1C99-4846-933E-DA866B9FB32D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{BC23E56E-5F3C-4B6C-9DFF-767C00842AE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{BC23E56E-5F3C-4B6C-9DFF-767C00842AE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{11F0E467-B664-4542-8F0C-8B0C69209DDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerService", "LoggerService\LoggerService.csproj", "{11F0E467-B664-4542-8F0C-8B0C69209DDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{C7072E34-3E78-49A4-B9F1-E6B9BBF732EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{C7072E34-3E78-49A4-B9F1-E6B9BBF732EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{8D109762-4AD3-433D-9AF7-27C035EF1F6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{8D109762-4AD3-433D-9AF7-27C035EF1F6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Contracts", "Service.Contracts\Service.Contracts.csproj", "{2667AD4C-10CF-43C2-9BA1-0D966B920F20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Contracts", "Service.Contracts\Service.Contracts.csproj", "{2667AD4C-10CF-43C2-9BA1-0D966B920F20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{90908D4A-58B2-40BD-8010-B6253CB5C78A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{90908D4A-58B2-40BD-8010-B6253CB5C78A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardDeckGame.Presentation", "CardDeckGame.Presentation\CardDeckGame.Presentation.csproj", "{14C0D56B-91C2-40CF-9F25-6BD405BDD5A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardDeckGame.Presentation", "CardDeckGame.Presentation\CardDeckGame.Presentation.csproj", "{14C0D56B-91C2-40CF-9F25-6BD405BDD5A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{5263DB3D-F234-46BB-963C-5CDAEAD5CD79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +72,10 @@ Global
 		{14C0D56B-91C2-40CF-9F25-6BD405BDD5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14C0D56B-91C2-40CF-9F25-6BD405BDD5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14C0D56B-91C2-40CF-9F25-6BD405BDD5A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5263DB3D-F234-46BB-963C-5CDAEAD5CD79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5263DB3D-F234-46BB-963C-5CDAEAD5CD79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5263DB3D-F234-46BB-963C-5CDAEAD5CD79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5263DB3D-F234-46BB-963C-5CDAEAD5CD79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{2667AD4C-10CF-43C2-9BA1-0D966B920F20} = {86EE6E2B-21C0-4946-840C-9421504DF2F8}
 		{90908D4A-58B2-40BD-8010-B6253CB5C78A} = {8A9BFC74-2C52-4DD2-91A6-EA67DDC462D7}
 		{14C0D56B-91C2-40CF-9F25-6BD405BDD5A0} = {A98EA948-50A8-4EA5-8366-055C0E8768D3}
+		{5263DB3D-F234-46BB-963C-5CDAEAD5CD79} = {86EE6E2B-21C0-4946-840C-9421504DF2F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9ED223FE-CC6F-46F1-A274-C5826995D8A9}

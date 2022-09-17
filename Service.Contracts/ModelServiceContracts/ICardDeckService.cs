@@ -1,8 +1,8 @@
-﻿using Entities.Models;
+﻿using Shared.DataTransferObjects.CardDeck;
 
 namespace Service.Contracts.ModelServiceContracts;
 
 public interface ICardDeckService
 {
-    IEnumerable<CardDeck> GetAllCardDecks(bool trackChanges);
+    IEnumerable<CardDeckDto> GetAllCardDecks(bool trackChanges);
 }

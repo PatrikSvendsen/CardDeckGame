@@ -4,6 +4,7 @@ using Repository;
 using Service.Contracts;
 using Service;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace CardDeckGame.Extensions;
 
@@ -22,6 +23,23 @@ public static class ServiceExtensions
                 .AllowAnyMethod()
                 .AllowAnyHeader());
         });
+
+    public static void ConfigureSwagger(this IServiceCollection services)
+    {
+        services.AddSwaggerGen(s =>
+        {
+            s.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "Card Deck Game API",
+                Version = "v1"
+            });
+            s.SwaggerDoc("v2", new OpenApiInfo
+            {
+                Title = "Card Deck Game API",
+                Version = "v2"
+            });
+        });
+    }
 
     public static void ConfigureIISIntegration(this IServiceCollection services) =>
          services.Configure<IISOptions>(options => {});
