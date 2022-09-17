@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entities.Models;
 
-namespace Service.Contracts.ModelServiceContracts
+namespace Service.Contracts.ModelServiceContracts;
+
+public interface ICardDeckService
 {
-    public interface ICardDeckService
-    {
-
-    }
+    IEnumerable<CardDeck> GetAllCardDecks(bool trackChanges);
 }
