@@ -11,8 +11,8 @@ using Repository;
 namespace CardDeckGame.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20220916131850_AddedDataAndMoreProps")]
-    partial class AddedDataAndMoreProps
+    [Migration("20220918190843_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,9 +47,6 @@ namespace CardDeckGame.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Value")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CardDeckId");
@@ -63,8 +60,103 @@ namespace CardDeckGame.Migrations
                             CardDeckId = 1,
                             ImgName = "",
                             Name = "Ace of Hearts",
-                            Suit = "Hearts",
-                            Value = 1
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "Two",
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "Three",
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "Four",
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "Five",
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "Six",
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "Seven",
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "Eight",
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "Nine",
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "Ten",
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "Jack",
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "Queen",
+                            Suit = "Hearts"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CardDeckId = 1,
+                            ImgName = "",
+                            Name = "King",
+                            Suit = "Hearts"
                         });
                 });
 

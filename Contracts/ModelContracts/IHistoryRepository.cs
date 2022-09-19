@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entities.Models;
 
 namespace Contracts.ModelContracts;
+
 public interface IHistoryRepository
 {
-
+    Task<IEnumerable<History>> GetAllHistoryAsync(bool trackChanges);
+    Task<History> GetHistoryAsync(int historyId, bool trackChanges);
+    void CreateHistory(History history);
 }

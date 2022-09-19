@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Shared.DataTransferObjects.History;
 
 namespace Service.Contracts.ModelServiceContracts;
-public interface IHistoryService
-{
 
+public interface IHistoryService
+{   
+    Task<IEnumerable<HistoryDto>> GetAllHistoryASync(bool trackChanges);
+    Task<HistoryDto> GetHistoryAsync(int historyId, bool trackChanges);
+    Task<HistoryDto> CreateHistoryAsync(HistoryForCreationDto history);
 }

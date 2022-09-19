@@ -32,7 +32,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardDeckGame.Presentation", "CardDeckGame.Presentation\CardDeckGame.Presentation.csproj", "{14C0D56B-91C2-40CF-9F25-6BD405BDD5A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{5263DB3D-F234-46BB-963C-5CDAEAD5CD79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{5263DB3D-F234-46BB-963C-5CDAEAD5CD79}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{05D0967F-8AD6-4F3A-8E26-73369144CDC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCardDeckGame", "TestCardDeckGame\TestCardDeckGame.csproj", "{3AED8D88-746E-4B0D-AA80-26CD6418DFC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,6 +80,10 @@ Global
 		{5263DB3D-F234-46BB-963C-5CDAEAD5CD79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5263DB3D-F234-46BB-963C-5CDAEAD5CD79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5263DB3D-F234-46BB-963C-5CDAEAD5CD79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AED8D88-746E-4B0D-AA80-26CD6418DFC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AED8D88-746E-4B0D-AA80-26CD6418DFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AED8D88-746E-4B0D-AA80-26CD6418DFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AED8D88-746E-4B0D-AA80-26CD6418DFC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +98,7 @@ Global
 		{90908D4A-58B2-40BD-8010-B6253CB5C78A} = {8A9BFC74-2C52-4DD2-91A6-EA67DDC462D7}
 		{14C0D56B-91C2-40CF-9F25-6BD405BDD5A0} = {A98EA948-50A8-4EA5-8366-055C0E8768D3}
 		{5263DB3D-F234-46BB-963C-5CDAEAD5CD79} = {86EE6E2B-21C0-4946-840C-9421504DF2F8}
+		{3AED8D88-746E-4B0D-AA80-26CD6418DFC3} = {05D0967F-8AD6-4F3A-8E26-73369144CDC9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9ED223FE-CC6F-46F1-A274-C5826995D8A9}

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Contracts;
+using Entities.Exceptions.CardDeckExceptions;
 using Service.Contracts.ModelServiceContracts;
 using Shared.DataTransferObjects.CardDeck;
 
@@ -18,13 +19,23 @@ internal sealed class CardDeckService : ICardDeckService
         _mapper = mapper;
     }
 
-    public IEnumerable<CardDeckDto> GetAllCardDecks(bool trackChanges)
+    public async Task<IEnumerable<CardDeckDto>> GetAllCardDecksAsync(bool trackChanges)
     {
+        var cardDecks = await _repository.CardDeck.GetAllCardDecksAsync(trackChanges);
 
-        var cardDecks = _repository.CardDeck.GetAllCardDecks(trackChanges);
         var cardDecksDto = _mapper.Map<IEnumerable<CardDeckDto>>(cardDecks);
-
         return cardDecksDto;
+    }
 
+    public async Task<CardDeckDto> GetCardDeckAsync(int id, bool trackChanges)
+    {
+        var cardDeck = await _repository.CardDeck.GetCardDeckAsync(id, trackChanges);
+        if (cardDeck is null)
+        {
+            throw new CardDeckNotFoundException(id);
+        }
+
+        var cardDeckDto = _mapper.Map<CardDeckDto>(cardDeck);
+        return cardDeckDto;
     }
 }

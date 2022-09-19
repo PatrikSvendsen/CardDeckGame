@@ -4,5 +4,6 @@ namespace Service.Contracts.ModelServiceContracts;
 
 public interface ICardDeckService
 {
-    IEnumerable<CardDeckDto> GetAllCardDecks(bool trackChanges);
+    Task<IEnumerable<CardDeckDto>> GetAllCardDecksAsync(bool trackChanges);
+    Task<CardDeckDto> GetCardDeckAsync(int cardDeckId, bool trackChanges);
 }

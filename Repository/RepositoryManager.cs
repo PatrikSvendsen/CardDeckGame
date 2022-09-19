@@ -30,5 +30,5 @@ public sealed class RepositoryManager : IRepositoryManager
     public ICardRepository Card => _cardRepository.Value;
     public IHistoryRepository History => _historyRepository.Value;
 
-    public void Save() => _repositoryContext.SaveChanges();
+    public async Task SaveAsync() => await _repositoryContext.SaveChangesAsync();
 }

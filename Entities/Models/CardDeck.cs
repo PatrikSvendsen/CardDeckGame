@@ -13,5 +13,4 @@ public class CardDeck
     public string ImgName { get; set; } = string.Empty;
 
     public ICollection<Card>? Cards { get; set; }
-
 }

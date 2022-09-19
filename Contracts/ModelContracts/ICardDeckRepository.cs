@@ -1,7 +1,9 @@
 ﻿using Entities.Models;
 
 namespace Contracts.ModelContracts;
+
 public interface ICardDeckRepository
 {
-    IEnumerable<CardDeck> GetAllCardDecks(bool trackChanges);
+    Task<IEnumerable<CardDeck>> GetAllCardDecksAsync(bool trackChanges);
+    Task<CardDeck> GetCardDeckAsync(int cardDeckId, bool trackChanges);
 }
