@@ -116,7 +116,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 1,
+                Id = 14,
                 Name = "Ace of Clubs",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -124,7 +124,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 2,
+                Id = 15,
                 Name = "Two",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -132,7 +132,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 3,
+                Id = 16,
                 Name = "Three",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -140,7 +140,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 4,
+                Id = 17,
                 Name = "Four",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -148,7 +148,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 5,
+                Id = 18,
                 Name = "Five",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -156,7 +156,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 6,
+                Id = 19,
                 Name = "Six",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -164,7 +164,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 7,
+                Id = 20,
                 Name = "Seven",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -172,7 +172,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 8,
+                Id = 21,
                 Name = "Eight",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -180,7 +180,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 9,
+                Id = 22,
                 Name = "Nine",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -188,7 +188,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 10,
+                Id = 23,
                 Name = "Ten",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -196,7 +196,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 11,
+                Id = 24,
                 Name = "Jack",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -204,7 +204,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 12,
+                Id = 25,
                 Name = "Queen",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -212,7 +212,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 13,
+                Id = 26,
                 Name = "King",
                 Suit = "Clubs",
                 CardDeckId = 1,
@@ -220,7 +220,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 1,
+                Id = 27,
                 Name = "Ace of Spades",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -228,7 +228,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 2,
+                Id = 28,
                 Name = "Two",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -236,7 +236,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 3,
+                Id = 29,
                 Name = "Three",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -244,7 +244,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 4,
+                Id = 30,
                 Name = "Four",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -252,7 +252,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 5,
+                Id = 31,
                 Name = "Five",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -260,7 +260,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 6,
+                Id = 32,
                 Name = "Six",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -268,7 +268,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 7,
+                Id = 33,
                 Name = "Seven",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -276,7 +276,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 8,
+                Id = 34,
                 Name = "Eight",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -284,7 +284,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 9,
+                Id = 35,
                 Name = "Nine",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -292,7 +292,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 10,
+                Id = 36,
                 Name = "Ten",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -300,7 +300,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 11,
+                Id = 37,
                 Name = "Jack",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -308,7 +308,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 12,
+                Id = 38,
                 Name = "Queen",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -316,7 +316,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 13,
+                Id = 39,
                 Name = "King",
                 Suit = "Spades",
                 CardDeckId = 1,
@@ -324,7 +324,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 1,
+                Id = 40,
                 Name = "Ace of Diamonds",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -332,7 +332,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 2,
+                Id = 41,
                 Name = "Two",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -340,7 +340,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 3,
+                Id = 42,
                 Name = "Three",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -348,7 +348,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 4,
+                Id = 43,
                 Name = "Four",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -356,7 +356,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 5,
+                Id = 44,
                 Name = "Five",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -364,7 +364,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 6,
+                Id = 45,
                 Name = "Six",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -372,7 +372,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 7,
+                Id = 46,
                 Name = "Seven",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -380,7 +380,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 8,
+                Id = 47,
                 Name = "Eight",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -388,7 +388,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 9,
+                Id = 48,
                 Name = "Nine",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -396,7 +396,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 10,
+                Id = 49,
                 Name = "Ten",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -404,7 +404,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 11,
+                Id = 50,
                 Name = "Jack",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -412,7 +412,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 12,
+                Id = 51,
                 Name = "Queen",
                 Suit = "Diamonds",
                 CardDeckId = 1,
@@ -420,7 +420,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             },
             new Card
             {
-                Id = 13,
+                Id = 52,
                 Name = "King",
                 Suit = "Diamonds",
                 CardDeckId = 1,
