@@ -1,0 +1,14 @@
+﻿@page "/cardRounds"
+@using CardDeckGame.Client.HttpRepository.CardDeckHttp
+@using CardDeckGame.Client.HttpRepository.CardHttp
+@inject ICardDeckHttpRepository CardDeckHttpRepository
+@inject ICardHttpRepository CardHttpRepository
+
+<h3>Welcome World!</h3>
+
+<h4>Please choose 1 to 5 cards below to replace them.</h4>
+
+@if(CardDeck is null)
+{
+    <span>Trying to fetch data...</span>
+}

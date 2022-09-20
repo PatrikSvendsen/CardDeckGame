@@ -1,10 +1,13 @@
-﻿namespace Shared.DataTransferObjects.History;
+﻿using Shared.DataTransferObjects.Card;
 
-//public record HistoryDto
-//{
-//    public int Id { get; init; }
-//    public int Round { get; init; }
-//    public int CardId{ get; init; }
-//};
+namespace Shared.DataTransferObjects.History;
 
-public record HistoryDto(int Id, int Round, int CardID);
+public record HistoryDto
+{
+    public int Id { get; init; }
+    public int Round { get; init; }
+    public int CardId { get; init; }
+    public CardDto Card { get; init; }
+};
+
+//public record HistoryDto(int Id, int Round, int CardID);

@@ -14,9 +14,11 @@ public class CardDeckRepository : RepositoryBase<CardDeck>, ICardDeckRepository
     public async Task<IEnumerable<CardDeck>> GetAllCardDecksAsync(bool trackChanges) =>
         await FindAll(trackChanges)
         .OrderBy(c => c.Name)
+        .Include(e => e.Cards)
         .ToListAsync();
 
     public async Task<CardDeck> GetCardDeckAsync(int cardDeckId, bool trackChanges) =>
        await FindByCondition(c => c.Id.Equals(cardDeckId), trackChanges)
+        .Include(e => e.Cards)
         .SingleOrDefaultAsync();
 }

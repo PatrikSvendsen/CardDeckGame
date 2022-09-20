@@ -1,0 +1,25 @@
+﻿.wrapper {
+    display: grid;
+    grid-template-columns: 100px 160px 160px 200px 250px;
+}
+
+.main-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.container {
+    flex: 1;
+    flex-flow: column wrap;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    min-width: 300px;
+}
+
+    .container > * {
+        flex: 1;
+    }

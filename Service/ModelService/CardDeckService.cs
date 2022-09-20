@@ -36,6 +36,7 @@ internal sealed class CardDeckService : ICardDeckService
         }
 
         var cardDeckDto = _mapper.Map<CardDeckDto>(cardDeck);
+        
         return cardDeckDto;
     }
 }

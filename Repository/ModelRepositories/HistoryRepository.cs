@@ -13,10 +13,12 @@ public class HistoryRepository : RepositoryBase<History>, IHistoryRepository
     public async Task<IEnumerable<History>> GetAllHistoryAsync(bool trackChanges) =>
         await FindAll(trackChanges)
         .OrderBy(c => c.Id)
+        .Include(e => e.Card)
         .ToListAsync();
 
     public async Task<History> GetHistoryAsync(int historyId, bool trackChanges) =>
        await FindByCondition(c => c.Id.Equals(historyId), trackChanges)
+        .Include(e => e.Card)
         .SingleOrDefaultAsync();
     
     public void CreateHistory(History history) => Create(history);

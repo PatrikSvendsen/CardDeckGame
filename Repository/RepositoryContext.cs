@@ -16,6 +16,7 @@ public class RepositoryContext : DbContext
         modelbuilder.ApplyConfiguration(new CardConfiguration());
     }
 
+
     public DbSet<CardDeck>? CardDecks { get; set; }
     public DbSet<Card>? Cards { get; set; }
     public DbSet<History>? History { get; set; }

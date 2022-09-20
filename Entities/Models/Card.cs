@@ -14,5 +14,5 @@ public class Card
 
     [ForeignKey(nameof(CardDeck))]
     public int CardDeckId { get; set; }
-    public CardDeck? CardDeck { get; set; }
+    public virtual CardDeck? CardDeck { get; set; }
 }

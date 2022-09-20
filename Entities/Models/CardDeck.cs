@@ -12,5 +12,5 @@ public class CardDeck
     public int TotalCards { get; set; } = 52;
     public string ImgName { get; set; } = string.Empty;
 
-    public ICollection<Card>? Cards { get; set; }
+    public virtual ICollection<Card>? Cards { get; set; }
 }

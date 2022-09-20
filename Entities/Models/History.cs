@@ -11,5 +11,5 @@ public class History
 
     [ForeignKey(nameof(Card))]
     public int CardId { get; set; }
-    public Card? Card { get; set; }
+    public virtual Card? Card { get; set; }
 }

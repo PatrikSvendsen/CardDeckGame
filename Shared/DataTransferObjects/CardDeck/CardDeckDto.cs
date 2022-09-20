@@ -1,3 +1,5 @@
-﻿namespace Shared.DataTransferObjects.CardDeck;
+﻿using Shared.DataTransferObjects.Card;
 
-public record CardDeckDto(int Id, string Name, int TotalCards);
+namespace Shared.DataTransferObjects.CardDeck;
+
+public record CardDeckDto(int Id, string Name, int TotalCards, ICollection<CardDto> Cards);

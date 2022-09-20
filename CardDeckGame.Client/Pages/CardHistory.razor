@@ -1,0 +1,25 @@
+﻿@page "/cardHistory"
+@using CardDeckGame.Client.HttpRepository.CardHttp
+@using CardDeckGame.Client.HttpRepository.HistoryHttp
+@inject IHistoryHttpRepository HistoryHttpRepository
+@inject ICardHttpRepository CardHttpRepository
+
+<h3>Welcome History</h3>
+
+@if (HistoryList == null || HistoryList.Count == 0)
+{
+    <span>No history found in the database.</span>
+}
+else
+{
+    <div class="main-container">
+        <div class="container">
+            @foreach (var card in HistoryList)
+            {
+                <div class="wrapper">
+                    <div class="box">@card.Id</div> 
+                </div>
+            }
+        </div>
+    </div>
+}
