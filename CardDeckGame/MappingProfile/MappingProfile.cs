@@ -4,7 +4,7 @@ using Shared.DataTransferObjects.Card;
 using Shared.DataTransferObjects.CardDeck;
 using Shared.DataTransferObjects.History;
 
-namespace CardDeckGame.MappingProfile;
+namespace CardDeckGame.Server.MappingProfile;
 
 public class MappingProfile : Profile
 {

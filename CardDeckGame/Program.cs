@@ -1,4 +1,4 @@
-using CardDeckGame.Extensions;
+using CardDeckGame.Server.Extensions;
 using Contracts;
 using Microsoft.AspNetCore.HttpOverrides;
 using NLog;

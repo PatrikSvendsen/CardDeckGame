@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CardDeckGame.Presentation\CardDeckGame.Presentation.csproj" />
-    <ProjectReference Include="..\CardDeckGame\CardDeckGame.csproj" />
+    <ProjectReference Include="..\CardDeckGame\CardDeckGame.Server.csproj" />
     <ProjectReference Include="..\Contracts\Contracts.csproj" />
     <ProjectReference Include="..\Entities\Entities.csproj" />
     <ProjectReference Include="..\LoggerService\LoggerService.csproj" />

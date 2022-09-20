@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Design;
 using Repository;
 
-namespace CardDeckGame.ContextFactory;
+namespace CardDeckGame.Server.ContextFactory;
 
 public class RepositoryContextFactory : IDesignTimeDbContextFactory<RepositoryContext>
 {
@@ -15,7 +15,7 @@ public class RepositoryContextFactory : IDesignTimeDbContextFactory<RepositoryCo
 
         var builder = new DbContextOptionsBuilder<RepositoryContext>()
         .UseSqlServer(configuration.GetConnectionString("sqlConnection"),
-        b => b.MigrationsAssembly("CardDeckGame"));
+        b => b.MigrationsAssembly("CardDeckGame.Server"));
 
         return new RepositoryContext(builder.Options);
     }

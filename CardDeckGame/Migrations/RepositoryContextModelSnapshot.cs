@@ -7,7 +7,7 @@ using Repository;
 
 #nullable disable
 
-namespace CardDeckGame.Migrations
+namespace CardDeckGame.Server.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
     partial class RepositoryContextModelSnapshot : ModelSnapshot

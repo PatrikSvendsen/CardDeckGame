@@ -28,7 +28,7 @@ internal sealed class CardService : ICardService
             throw new CardDeckNotFoundException(cardDeckId);
         }
 
-        var cardDb = _repository.Card.GetCardAsync(cardDeckId, id, trackChanges);
+        var cardDb = await _repository.Card.GetCardAsync(cardDeckId, id, trackChanges);
         if (cardDb is null)
         {
             throw new CardNotFoundException(id);
@@ -46,9 +46,9 @@ internal sealed class CardService : ICardService
             throw new CardDeckNotFoundException(cardDeckId);
         }
 
-        var cardsFromDb = _repository.Card.GetCardsAsync(cardDeckId, trackChanges);
+        var cardsFromDb = await _repository.Card.GetCardsAsync(cardDeckId, trackChanges);
+        
         var cardsDto = _mapper.Map<IEnumerable<CardDto>>(cardsFromDb);
-
         return cardsDto;
     }
 }

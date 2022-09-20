@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace CardDeckGame.Migrations
+namespace CardDeckGame.Server.Migrations
 {
     public partial class InitialCreate : Migration
     {

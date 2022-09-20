@@ -6,7 +6,7 @@ using Repository;
 using Service;
 using Service.Contracts;
 
-namespace CardDeckGame.Extensions;
+namespace CardDeckGame.Server.Extensions;
 
 public static class ServiceExtensions
 {

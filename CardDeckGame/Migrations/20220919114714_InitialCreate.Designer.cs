@@ -8,10 +8,10 @@ using Repository;
 
 #nullable disable
 
-namespace CardDeckGame.Migrations
+namespace CardDeckGame.Server.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20220918190843_InitialCreate")]
+    [Migration("20220919114714_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

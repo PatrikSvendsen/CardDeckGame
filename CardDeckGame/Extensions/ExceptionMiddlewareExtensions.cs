@@ -3,7 +3,7 @@ using Entities.ErrorModel;
 using Entities.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 
-namespace CardDeckGame.Extensions;
+namespace CardDeckGame.Server.Extensions;
 
 public static class ExceptionMiddlewareExtensions
 {
