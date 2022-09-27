@@ -33,7 +33,7 @@ internal sealed class HistoryService : IHistoryService
         var history = await _repository.History.GetHistoryAsync(id, trackChanges);
         if (history is null)
         {
-            throw new HistoryNotFoundException(id); 
+            throw new HistoryNotFoundException(id);
         }
 
         var historyDto = _mapper.Map<HistoryDto>(history);

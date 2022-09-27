@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Contracts;
+using Entities.Exceptions;
 using Entities.Exceptions.CardDeckExceptions;
 using Service.Contracts.ModelServiceContracts;
 using Shared.DataTransferObjects.CardDeck;
@@ -27,7 +28,7 @@ internal sealed class CardDeckService : ICardDeckService
         return cardDecksDto;
     }
 
-    public async Task<CardDeckDto> GetCardDeckAsync(int id, bool trackChanges)
+    public async Task<CardDeckDto> GetCardDeckByIdAsync(int id, bool trackChanges)
     {
         var cardDeck = await _repository.CardDeck.GetCardDeckAsync(id, trackChanges);
         if (cardDeck is null)

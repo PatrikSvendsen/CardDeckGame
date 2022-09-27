@@ -1,0 +1,15 @@
+﻿<body>
+    <div class="wrapper">
+        <div class="row">
+            @*<ImgComponent Source="@Source"></ImgComponent>*@
+            <h5>@Heading</h5>
+        </div>
+    </div>
+</body>
+
+@code {
+    [Parameter]
+    public string? Heading { get; set; }
+    [Parameter]
+    public string? Source { get; set; }
+}

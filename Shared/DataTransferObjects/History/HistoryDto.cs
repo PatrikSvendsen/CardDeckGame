@@ -10,4 +10,4 @@ public record HistoryDto
     public CardDto Card { get; init; }
 };
 
-//public record HistoryDto(int Id, int Round, int CardID);
+//public record HistoryDto(int Id, int Round, int CardId, CardDto Card);

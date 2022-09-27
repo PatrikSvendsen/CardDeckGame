@@ -22,7 +22,7 @@ public class HistoryHttpRepository : IHistoryHttpRepository
     {
         var history = JsonSerializer.Serialize(historyForCreationDto);
         var requestContent = new StringContent(history, Encoding.UTF8, "application/json");
-        var response = await _http.PostAsync("/historys", requestContent);
+        var response = await _http.PostAsync("/api/historys", requestContent);
         
         var content = await response.Content.ReadAsStringAsync();
         if (response.IsSuccessStatusCode == false)

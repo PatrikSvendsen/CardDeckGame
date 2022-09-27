@@ -15,6 +15,7 @@ public class MappingProfile : Profile
         CreateMap<Card, CardDto>();
 
         CreateMap<History, HistoryDto>();
+        CreateMap<HistoryDto, History>();
         CreateMap<HistoryForCreationDto, History>();
     }
 }

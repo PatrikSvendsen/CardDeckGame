@@ -1,14 +1,58 @@
 ﻿@page "/cardRounds"
+@using CardDeckGame.Client.Components
 @using CardDeckGame.Client.HttpRepository.CardDeckHttp
 @using CardDeckGame.Client.HttpRepository.CardHttp
+@using CardDeckGame.Client.HttpRepository.HistoryHttp
 @inject ICardDeckHttpRepository CardDeckHttpRepository
 @inject ICardHttpRepository CardHttpRepository
+@inject IHistoryHttpRepository HistoryHttpRepository
 
 <h3>Welcome World!</h3>
 
-<h4>Please choose 1 to 5 cards below to replace them.</h4>
 
-@if(CardDeck is null)
+@if (ShuffledCardDeck is null)
 {
-    <span>Trying to fetch data...</span>
+    <div class="btn btn-success btn-lg" @onclick="@(() => ShuffleCardDeck())">Click here to shuffle the card deck.</div>
 }
+else if (ShuffledCardDeck.Count() == 0 && Hand.Count() < 5)
+{
+    <p><div class="btn btn-success btn-lg" @onclick="@(() => ShuffleCardDeck())">Card deck is now empty, please shuffle.</div></p>
+
+}
+@if(ShuffledCardDeck is not null && Hand is null)
+{
+    FillHand(5);
+    ClearDeckOfOldCards();
+}
+
+@if (Hand is null || Hand.Count() == 0)
+{
+    <span>Waiting for card deck to be shuffled</span>
+}
+else if (Hand is not null)
+{
+    <h4>Please choose 1 to 5 cards below to replace them.</h4>
+
+    @foreach (var card in Hand)
+    {
+        <img src="@card.ImgName" width="150" height="241">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" @bind-value="card.CheckBoxIsActive" 
+            checked=@card.CheckBoxIsActive id="TossCard">
+            <label class="form-check-label" for="TossCard">Toss card?</label>
+        </div>
+    }
+
+    <div class="btn btn-danger" type="submit" @onclick="@((e) => AddToHistory(Hand))">Get me some new cards!</div>
+    <div class="btn btn-danger-lg" type="submit" @onclick="@ClearDeck">CLEAR DECK</div>
+}
+
+
+@if (clearHand == true)
+{
+    ClearHandOfOldCards();
+    FillHand(cardsToFill);
+    ClearDeckOfOldCards();
+}
+
+

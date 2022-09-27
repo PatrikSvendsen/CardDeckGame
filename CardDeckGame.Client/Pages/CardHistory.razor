@@ -14,11 +14,9 @@ else
 {
     <div class="main-container">
         <div class="container">
-            @foreach (var card in HistoryList)
+            @foreach (var history in HistoryList)
             {
-                <div class="wrapper">
-                    <div class="box">@card.Id</div> 
-                </div>
+                <img src="@history.Card.ImgName" width="150" height="241">
             }
         </div>
     </div>

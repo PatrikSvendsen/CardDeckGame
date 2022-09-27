@@ -7,7 +7,6 @@ public record CardDto
     public string Suit { get; init; } = string.Empty;
     public int CardDeckId { get; init; }
     public string ImgName { get; init; } = string.Empty;
-    public bool CheckBox { get; set; } = false;
-};
 
-//public record CardDto(int Id, string Name, string Suit, string ImgName, int CardDeckId, bool CheckBox);
+    public bool CheckBoxIsActive { get; set; } = false;
+};
