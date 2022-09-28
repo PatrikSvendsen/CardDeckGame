@@ -23,7 +23,7 @@ public partial class CardRounds
         CardDeck = await CardDeckHttpRepository.GetCardDeck(1);
     }
 
-    protected async void ShuffleCardDeck()
+    protected async void ShuffleCardDeck(bool check)
     {
         var cardsList = await CardHttpRepository.GetCards(1);
         var n = 52;
@@ -36,8 +36,11 @@ public partial class CardRounds
             cardsList[k] = cardsList[n];
             cardsList[n] = value;
         }
-
         ShuffledCardDeck = cardsList.ToList();
+        if (check is true)
+        {
+            ReShuffle();
+        }
         StateHasChanged();
     }
 
@@ -103,6 +106,14 @@ public partial class CardRounds
     protected void ClearDeck()
     {
         ShuffledCardDeck.Clear();
+        StateHasChanged();
+    }
+
+    protected void ReShuffle()
+    {
+        Hand.Clear();
+        FillHand(5);
+        ClearDeckOfOldCards();
         StateHasChanged();
     }
 }

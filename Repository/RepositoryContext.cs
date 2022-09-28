@@ -14,6 +14,7 @@ public class RepositoryContext : DbContext
     {
         modelbuilder.ApplyConfiguration(new CardDeckConfiguration());
         modelbuilder.ApplyConfiguration(new CardConfiguration());
+        modelbuilder.ApplyConfiguration(new HistoryConfiguration());
     }
 
 

@@ -9,8 +9,10 @@ namespace CardDeckGame.Presentation.Controllers;
 public class HistorysController : ControllerBase
 {
     private readonly IServiceManager _service;
-    public HistorysController(IServiceManager service) => _service = service;
-
+    public HistorysController(IServiceManager service)
+    {
+        _service = service;
+    }
 
     [HttpGet]
     public async Task<IActionResult> GetHistorys()
@@ -30,12 +32,10 @@ public class HistorysController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateHistory([FromBody] HistoryForCreationDto history)
+    public async Task<IActionResult> CreateHistory(HistoryForCreationDto history) //[FromBody] 
     {
-        if (history is null)
-        {       
+        if (history is null)  
             return BadRequest("HistoryForCreation object is null");
-        }
 
         var createdHistory = 
             await _service.HistoryService.CreateHistoryAsync(history);

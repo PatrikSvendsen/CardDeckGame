@@ -1,29 +1,16 @@
 ﻿using CardDeckGame.Presentation.Controllers;
-using Contracts.ModelContracts;
-using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using RazorEngine.Compilation.ImpromptuInterface;
 using Service.Contracts;
-using Service.Contracts.ModelServiceContracts;
 using Shared.DataTransferObjects.Card;
 using Shared.DataTransferObjects.CardDeck;
-using Xunit.Sdk;
-using Assert = Xunit.Assert;
 
 namespace CardDeckGame.Test.Controllers;
 
-public class CardDeckControllerTest
+public class CardDecksControllerTest
 {
-
-    //private readonly Mock<ICardDeckRepository> _mockRepo;
-    //public CardDeckControllerTest()
-    //{
-    //    _mockRepo = new Mock<ICardDeckRepository>();
-    //}    
-
     private readonly Mock<IServiceManager> _mockService;
-    public CardDeckControllerTest()
+    public CardDecksControllerTest()
     {
         _mockService = new Mock<IServiceManager>();
     }
@@ -41,7 +28,7 @@ public class CardDeckControllerTest
         // Act
         var taskIActionResult = controller.GetCardDecks();
         var result = taskIActionResult.Result as OkObjectResult;
-        var actual = result.Value as List<CardDeckDto>;
+        var actual = result.Value;
 
         // Assert
         Assert.IsType<OkObjectResult>(result);
@@ -49,13 +36,35 @@ public class CardDeckControllerTest
     }
 
     [Fact]
-    public void GetCardDeckByIdAsync_OKObjectResultAndNullInValue_CardDeckWithIdDoesNotExist()
+    public void GetCardDeckByIdAsync_OkObjectResultAndCardDeckDto_CardDeckExistInRepo()
+    {
+        // Arrange
+        var cardDeck = GetTestCardDeckById();
+
+        _mockService.Setup(x => x.CardDeckService.GetCardDeckByIdAsync(1, It.IsAny<bool>()))
+            .Returns(cardDeck);
+
+        var controller = new CardDecksController(_mockService.Object);
+
+        // Act
+        var taskIActionResult = controller.GetCardDeckById(1);
+        var result = taskIActionResult.Result as OkObjectResult;
+        var actual = result.Value;
+
+        // Assert
+        Assert.IsType<OkObjectResult>(result);
+        Assert.IsType<CardDeckDto>(actual);
+    }
+
+
+    [Fact]
+    public void GetCardDeckByIdAsync_OKObjectResultAndNullInValue_CardDeckWithIdDoesNotExistInRepo()
     {
         //Arrange
         var cardDeck = GetTestCardDeckById();
 
         _mockService.Setup(x => x.CardDeckService.GetCardDeckByIdAsync(1, It.IsAny<bool>()))
-            .Returns(() => (cardDeck));
+            .Returns(cardDeck);
 
         var controller = new CardDecksController(_mockService.Object);
 
@@ -69,10 +78,8 @@ public class CardDeckControllerTest
         Assert.Null(actual);
     }
 
-
-
-
-
+    // Här nedan finns endast skitkod för att skapa "listor" med carddecks.
+    #region List of CardDecks
     private static async Task<IEnumerable<CardDeckDto>> GetTestCardDecks()
     {
         var cardDecks = new List<CardDeckDto>();
@@ -110,6 +117,8 @@ public class CardDeckControllerTest
                 }
             }
         };
+
         return cardDeck;
     }
+    #endregion
 }

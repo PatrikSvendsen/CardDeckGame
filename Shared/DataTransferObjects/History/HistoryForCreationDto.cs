@@ -6,5 +6,3 @@ public record HistoryForCreationDto
     public int Round { get; init; }
     public int CardId { get; init; }
 };
-
-//public record HistoryForCreationDto(int Id, int Round, int CardID);

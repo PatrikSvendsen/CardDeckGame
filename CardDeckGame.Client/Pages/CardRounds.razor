@@ -12,14 +12,13 @@
 
 @if (ShuffledCardDeck is null)
 {
-    <div class="btn btn-success btn-lg" @onclick="@(() => ShuffleCardDeck())">Click here to shuffle the card deck.</div>
+    <div class="btn btn-success btn-lg" @onclick="@(() => ShuffleCardDeck(false))">Click here to shuffle the card deck.</div>
 }
-else if (ShuffledCardDeck.Count() == 0 && Hand.Count() < 5)
+else if (ShuffledCardDeck.Count() == 0)
 {
-    <p><div class="btn btn-success btn-lg" @onclick="@(() => ShuffleCardDeck())">Card deck is now empty, please shuffle.</div></p>
-
+    <p><div class="btn btn-success btn-lg" @onclick="@(() => ShuffleCardDeck(true))">Card deck is now empty, continue or shuffle card deck.</div></p>
 }
-@if(ShuffledCardDeck is not null && Hand is null)
+@if (ShuffledCardDeck is not null && Hand is null)
 {
     FillHand(5);
     ClearDeckOfOldCards();
@@ -37,16 +36,16 @@ else if (Hand is not null)
     {
         <img src="@card.ImgName" width="150" height="241">
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" @bind-value="card.CheckBoxIsActive" 
-            checked=@card.CheckBoxIsActive id="TossCard">
+            <input class="form-check-input" type="checkbox" @bind-value="card.CheckBoxIsActive"
+           checked=@card.CheckBoxIsActive id="TossCard">
             <label class="form-check-label" for="TossCard">Toss card?</label>
         </div>
     }
 
     <div class="btn btn-danger" type="submit" @onclick="@((e) => AddToHistory(Hand))">Get me some new cards!</div>
     <div class="btn btn-danger-lg" type="submit" @onclick="@ClearDeck">CLEAR DECK</div>
+    <p>@ShuffledCardDeck.Count()</p>
 }
-
 
 @if (clearHand == true)
 {
