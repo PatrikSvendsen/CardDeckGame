@@ -4,6 +4,7 @@ using Repository;
 
 namespace CardDeckGame.Server.ContextFactory;
 
+// Denna class används för att bygga EntityFramework samt för att lägga Migrations-mappen i Server-projektet (utan denna kod hade Migrations hamnat i CardDeckGame.Presentation projektet och det vill man inte.
 public class RepositoryContextFactory : IDesignTimeDbContextFactory<RepositoryContext>
 {
     public RepositoryContext CreateDbContext(string[] args)

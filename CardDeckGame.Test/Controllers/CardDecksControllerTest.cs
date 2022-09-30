@@ -15,6 +15,7 @@ public class CardDecksControllerTest
         _mockService = new Mock<IServiceManager>();
     }
 
+    // Testar att hämta all historik och kollar så det är rätt typ och status som kommer tillbaka
     [Fact]
     public void GetAllCardDeckAsync_ListOfCardDeckDto_CardDeckExistInRepo()
     {
@@ -35,6 +36,7 @@ public class CardDecksControllerTest
         Assert.IsType<List<CardDeckDto>>(actual);
     }
 
+    // Testar att hämta all historik och kontrollerar så det är rätt status och entitet som kommer tillbaka
     [Fact]
     public void GetCardDeckByIdAsync_OkObjectResultAndCardDeckDto_CardDeckExistInRepo()
     {
@@ -54,9 +56,10 @@ public class CardDecksControllerTest
         // Assert
         Assert.IsType<OkObjectResult>(result);
         Assert.IsType<CardDeckDto>(actual);
+        Assert.Equal(cardDeck.Result, actual);
     }
 
-
+    // Kontrollerar så att om en entiet inte existerar skall den skicka tillbaka OKObjectResult och Null i värde på retur.
     [Fact]
     public void GetCardDeckByIdAsync_OKObjectResultAndNullInValue_CardDeckWithIdDoesNotExistInRepo()
     {

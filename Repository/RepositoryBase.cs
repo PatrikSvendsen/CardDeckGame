@@ -3,18 +3,30 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace Repository;
+
+// En generell hanterare som kan används av alla classer.
 public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 {
     protected RepositoryContext RepositoryContext;
     public RepositoryBase(RepositoryContext repositoryContext)
     => RepositoryContext = repositoryContext;
 
+    /// <summary>
+    /// Nedan metod hämtar all data från databasen. 
+    /// </summary>
+    /// <returns>Returnerar en lista med all data.</returns>
     public IQueryable<T> FindAll(bool trackChanges) =>
     !trackChanges ?
     RepositoryContext.Set<T>()
     .AsNoTracking() :
     RepositoryContext.Set<T>();
 
+    /// <summary>
+    /// Hämtar en specifik datarad från databasen baserat på inkommande funktion. Ex om man söker på Id etc.
+    /// </summary>
+    /// <param name="expression"></param>
+    /// <param name="trackChanges"></param>
+    /// <returns></returns>
     public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression,
     bool trackChanges) =>
     !trackChanges ?
@@ -24,6 +36,9 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     RepositoryContext.Set<T>()
     .Where(expression);
 
+    /// <summary>
+    /// Metod som används för att skapa en entitet.
+    /// </summary>
     public void Create(T entity) => RepositoryContext.Set<T>().Add(entity);
     public void Update(T entity) => RepositoryContext.Set<T>().Update(entity);
     public void Delete(T entity) => RepositoryContext.Set<T>().Remove(entity);

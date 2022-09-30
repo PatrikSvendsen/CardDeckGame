@@ -15,26 +15,29 @@ public class HistorysControllerTest
         _mockService = new Mock<IServiceManager>();
     }
 
+    // Testar att hämta all historik och kollar så det är rätt typ och status som kommer tillbaka
     [Fact]
     public void GetHistorysAsync_ListOfHistorysDto_HistoryExistInRepo()
     {
         // Arrange
-        var historys = GetListOfHistory_Test();
-        _mockService.Setup(x => x.HistoryService.GetAllHistoryASync(It.IsAny<bool>()))
+        var historys = GetListOfHistory_Test();         // Fyller på historys med en falsk lista
+        _mockService.Setup(x => x.HistoryService.GetAllHistoryASync(It.IsAny<bool>()))         // Mockar servicelagret och skickar in en falsk lista.
             .Returns(historys);
 
-        var controller = new HistorysController(_mockService.Object);
+        var controller = new HistorysController(_mockService.Object); // Kastar in det i controllern
 
         // Act
-        var taskIActionResult = controller.GetHistorys();
+        var taskIActionResult = controller.GetHistorys(); // Kör igång den via kontrollern
         var result = taskIActionResult.Result as OkObjectResult;
         var actual = result.Value;
 
         // Assert
         Assert.IsType<OkObjectResult>(result);
         Assert.IsType<List<HistoryDto>>(actual);
+        Assert.Equal(historys.Result, actual); // Kollar så att det vi mockar är samma som vi får tillbaka
     }
 
+    // Testar att hämta all historik och kontrollerar så det är rätt status och entitet som kommer tillbaka
     [Fact]
     public void GetHistoryByIdAsync_OkObjectResultAndHistoryDto_HistoryWithIdExistInRepo()
     {
@@ -53,8 +56,10 @@ public class HistorysControllerTest
         // Assert
         Assert.IsType<OkObjectResult>(result);
         Assert.IsType<HistoryDto>(actual);
+        Assert.Equal(history.Result, actual);
     }
 
+    // Kontrollerar så att om en entiet inte existerar skall den skicka tillbaka OKObjectResult och Null i värde på retur.
     [Fact]
     public void GetHistoryByIdAsync_OkObjectResultAndNullHistoryDto_HistoryWithIdDoesNotExistInRepo()
     {
@@ -75,13 +80,15 @@ public class HistorysControllerTest
         Assert.Null(actual);
     }
 
+    // Kontrollerar så att en entitet skapas på rätt sätt och att den får ett Id tillbaka.
     [Fact]
     public void CreateHistory_OkObjectResultAndCreatedAtRoute_CreatingHistory()
     {
         // Arrange
         var history = HistoryDtoForCreation_Test();
 
-        _mockService.Setup(r => r.HistoryService.CreateHistoryAsync(It.IsAny<HistoryForCreationDto>()))
+        _mockService.Setup(r => r.HistoryService.CreateHistoryAsync(It.IsAny<HistoryForCreationDto>())) 
+            // Skapar en falsk entitet med Id.
             .ReturnsAsync(new HistoryDto()
             {
                 Id = 6,
@@ -97,10 +104,14 @@ public class HistorysControllerTest
 
         var result = taskIActionResult.Result as CreatedAtRouteResult;
         var actual = result.Value;
+        var value = actual as HistoryDto;
 
         // Assert
         Assert.IsType<CreatedAtRouteResult>(result);
         Assert.IsType<HistoryDto>(actual);
+        Assert.Equal(6, value.Id);
+        Assert.Equal(3, value.Round);
+        Assert.Equal(1, value.CardId);
     }
 
     // Här nedan finns endast skitkod för att skapa "listor" med cards.

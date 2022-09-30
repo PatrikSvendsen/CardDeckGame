@@ -2,6 +2,10 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Models;
+
+/// <summary>
+/// History class. Har en koppling till classen Card via Id.
+/// </summary>
 public class History
 {
     [Key]

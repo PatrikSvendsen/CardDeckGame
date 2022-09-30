@@ -2,6 +2,9 @@
 
 namespace Entities.ErrorModel;
 
+/// <summary>
+/// Class för att hantera fel
+/// </summary>
 public class ErrorDetails
 {
     public int StatusCode { get; set; }

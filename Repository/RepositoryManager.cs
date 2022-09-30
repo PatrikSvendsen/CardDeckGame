@@ -4,6 +4,11 @@ using Repository.ModelRepositories;
 
 namespace Repository;
 
+/// <summary>
+/// Hanterare för repositories. 
+/// </summary>
+
+// Denna används för att kunna göra flera saker samtidigt med databasen. För att minimera korvstoppning.
 public sealed class RepositoryManager : IRepositoryManager
 {
     private readonly RepositoryContext _repositoryContext;
@@ -24,7 +29,6 @@ public sealed class RepositoryManager : IRepositoryManager
         _historyRepository = new Lazy<IHistoryRepository>(() => new
         HistoryRepository(repositoryContext));
     }
-
 
     public ICardDeckRepository CardDeck => _cardDeckRepository.Value;
     public ICardRepository Card => _cardRepository.Value;

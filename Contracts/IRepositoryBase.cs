@@ -2,6 +2,10 @@
 
 namespace Contracts;
 
+/// <summary>
+/// Generiskt interface för CRUD-operationer mot databasen
+/// </summary>
+/// <typeparam name="T">Generisk class.</typeparam>
 public interface IRepositoryBase<T>
 {
     IQueryable<T> FindAll(bool trackChanges);

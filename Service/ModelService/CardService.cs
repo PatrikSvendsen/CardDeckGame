@@ -7,6 +7,9 @@ using Shared.DataTransferObjects.Card;
 
 namespace Service.ModelService;
 
+/// <summary>
+/// CardService classen injecerar loggern, mappern samt repository-managern. Samt hanterar alla metoder
+/// </summary>
 internal sealed class CardService : ICardService
 {
     private readonly IRepositoryManager _repository;

@@ -14,6 +14,10 @@ public class HistorysController : ControllerBase
         _service = service;
     }
 
+    /// <summary>
+    /// API-controller som tar emot en request från clienten och skickar den vidare till Service-lagret.
+    /// </summary>
+    /// <returns>Returnerar data om det finns annars null i värde.</returns>
     [HttpGet]
     public async Task<IActionResult> GetHistorys()
     {
@@ -22,6 +26,11 @@ public class HistorysController : ControllerBase
         return Ok(historys);
     }
 
+    /// <summary>
+    /// API-controller som tar emot en request från clienten och skickar den vidare till Service-lagret.
+    /// </summary>
+    /// <param name="id">Id på den entitet man vill hämta</param>
+    /// <returns>Returnerar data om det finns annars null i värde.</returns>
     [HttpGet]
     [Route("{id:int}")]
     public async Task<IActionResult> GetHistory(int id)
@@ -31,8 +40,13 @@ public class HistorysController : ControllerBase
         return Ok(history);
     }
 
+    /// <summary>
+    /// API-controller som tar emot en request från clienten och skickar den vidare till Service-lagret.
+    /// </summary>
+    /// <param name="history">Den entitet man vill skapa</param>
+    /// <returns>Returnerar en entitet med nytt Id om det lyckats skapas i databasen.</returns>
     [HttpPost]
-    public async Task<IActionResult> CreateHistory(HistoryForCreationDto history) //[FromBody] 
+    public async Task<IActionResult> CreateHistory([FromBody] HistoryForCreationDto history)
     {
         if (history is null)  
             return BadRequest("HistoryForCreation object is null");

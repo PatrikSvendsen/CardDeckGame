@@ -1,4 +1,5 @@
 ﻿using CardDeckGame.Presentation.Controllers;
+using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Service.Contracts;
@@ -14,6 +15,7 @@ public class CardsControllerTest
         _mockService = new Mock<IServiceManager>();
     }
 
+    // Testar att hämta all historik och kollar så det är rätt typ och status som kommer tillbaka
     [Fact]
     public void GetCardsAsync_ListOfCardsDto_CardsExistInRepo()
     {
@@ -32,8 +34,10 @@ public class CardsControllerTest
         // Assert
         Assert.IsType<OkObjectResult>(result);
         Assert.IsType<List<CardDto>>(actual);
+        Assert.Equal(cards.Result, actual);
     }
 
+    // Testar att hämta all historik och kontrollerar så det är rätt status och entitet som kommer tillbaka
     [Fact]
     public void GetCardByIdAsync_OkObjectResultAndCardDto_CardWithIdExistInRepo()
     {
@@ -53,8 +57,10 @@ public class CardsControllerTest
         //Assert
         Assert.IsType<OkObjectResult>(result);
         Assert.IsType<CardDto>(actual);
+        Assert.Equal(card.Result, actual);
     }
 
+    // Kontrollerar så att om en entiet inte existerar skall den skicka tillbaka OKObjectResult och Null i värde på retur.
     [Fact]
     public void GetCardByIdAsync_OkObjectResultAndNullCardDto_CardWithIdDoesNotExistInRepo()
     {

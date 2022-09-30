@@ -2,6 +2,9 @@
 
 namespace Contracts;
 
+/// <summary>
+/// Ett interface för att hantera de olika repository som finns.  
+/// </summary>
 public interface IRepositoryManager
 {
     ICardDeckRepository CardDeck { get;  }

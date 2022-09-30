@@ -7,12 +7,17 @@ namespace CardDeckGame.Presentation.Controllers;
 [ApiController]
 public class CardDecksController : ControllerBase
 {
+
     private readonly IServiceManager _service;
     public CardDecksController(IServiceManager service)
     {
         _service = service;
     }
 
+    /// <summary>
+    /// API-controller som tar emot en request från clienten och skickar den vidare till Service-lagret.
+    /// </summary>
+    /// <returns>Returnerar data om det finns annars null i värde.</returns>
     [HttpGet]
     public async Task<IActionResult> GetCardDecks()
     {
@@ -21,6 +26,11 @@ public class CardDecksController : ControllerBase
         return Ok(cardDecks);
     }
 
+    /// <summary>
+    /// API-controller som tar emot en request från clienten och skickar den vidare till Service-lagret.
+    /// </summary>
+    /// <param name="id">Id på den entitet man vill hämta från databasen</param>
+    /// <returns>Returnerar data om det finns annars null i värde.</returns>
     [HttpGet]
     [Route("{id:int}")]
     public async Task<IActionResult> GetCardDeckById(int id)

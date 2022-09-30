@@ -21,10 +21,9 @@ public class CardHttpRepository : ICardHttpRepository
     {
         var result = await _http.GetAsync($"/api/cardDecks/{cardDeckId}/cards/{cardId}");
         var content = await result.Content.ReadAsStringAsync();
+
         if (result.IsSuccessStatusCode == false)
-        {
             throw new ApplicationException(content);
-        }
 
         var card = JsonSerializer.Deserialize<CardDto>(content, _options);
         return card;
@@ -34,10 +33,9 @@ public class CardHttpRepository : ICardHttpRepository
     {
         var result = await _http.GetAsync($"/api/cardDecks/{cardDeckId}/cards");
         var content = await result.Content.ReadAsStringAsync();
+
         if (result.IsSuccessStatusCode == false)
-        {
             throw new ApplicationException(content);
-        }
 
         var cards = JsonSerializer.Deserialize<List<CardDto>>(content, _options);
         return cards;

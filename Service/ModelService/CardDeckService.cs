@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
 using Contracts;
-using Entities.Exceptions;
 using Entities.Exceptions.CardDeckExceptions;
 using Service.Contracts.ModelServiceContracts;
 using Shared.DataTransferObjects.CardDeck;
 
 namespace Service.ModelService;
 
+/// <summary>
+/// CardDeckService classen injecerar loggern, mappern samt repository-managern. Samt hanterar alla metoder
+/// </summary>
 internal sealed class CardDeckService : ICardDeckService
 {
     private readonly IRepositoryManager _repository;
@@ -37,7 +39,7 @@ internal sealed class CardDeckService : ICardDeckService
         }
 
         var cardDeckDto = _mapper.Map<CardDeckDto>(cardDeck);
-        
+
         return cardDeckDto;
     }
 }

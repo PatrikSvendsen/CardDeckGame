@@ -1,5 +1,8 @@
 ﻿namespace Shared.DataTransferObjects.Card;
 
+/// <summary>
+/// DTO class i form av Record. För att hålla riktiga entiteten borta från att bli manipulerad. 
+/// </summary>
 public record CardDto
 {
     public int Id { get; init; }

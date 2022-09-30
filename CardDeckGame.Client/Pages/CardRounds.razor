@@ -1,14 +1,6 @@
 ﻿@page "/cardRounds"
-@using CardDeckGame.Client.Components
-@using CardDeckGame.Client.HttpRepository.CardDeckHttp
-@using CardDeckGame.Client.HttpRepository.CardHttp
-@using CardDeckGame.Client.HttpRepository.HistoryHttp
-@inject ICardDeckHttpRepository CardDeckHttpRepository
-@inject ICardHttpRepository CardHttpRepository
-@inject IHistoryHttpRepository HistoryHttpRepository
 
 <h3>Welcome World!</h3>
-
 
 @if (ShuffledCardDeck is null)
 {
@@ -53,5 +45,6 @@ else if (Hand is not null)
     FillHand(cardsToFill);
     ClearDeckOfOldCards();
 }
+
 
 

@@ -5,6 +5,12 @@ using Service.Contracts.ModelServiceContracts;
 using Service.ModelService;
 
 namespace Service;
+
+/// <summary>
+/// Hanterare för repositories. 
+/// </summary>
+
+// Denna används för att kunna göra flera saker samtidigt med databasen. För att minimera korvstoppning.
 public sealed class ServiceManager : IServiceManager
 {
     private readonly Lazy<ICardDeckService> _cardDeckService;

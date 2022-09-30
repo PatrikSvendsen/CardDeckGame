@@ -17,29 +17,29 @@ public class CardDeckHttpRepository : ICardDeckHttpRepository
         };
     }
 
+    public async Task<List<CardDeckDto>> GetCardDecks()
+    {
+        var result = await _http.GetAsync($"/api/cardDecks");
+        var content = await result.Content.ReadAsStringAsync();
+
+        if (result.IsSuccessStatusCode == false)
+            throw new ApplicationException(content);
+
+        var cardDecks = JsonSerializer.Deserialize<List<CardDeckDto>>(content, _options);
+        return cardDecks;
+    }
+
     public async Task<CardDeckDto> GetCardDeck(int id)
     {
         var result = await _http.GetAsync($"/api/cardDecks/{id}");
         var content = await result.Content.ReadAsStringAsync();
+
         if (result.IsSuccessStatusCode == false)
-        {
             throw new ApplicationException(content);
-        }
 
         var cardDeck = JsonSerializer.Deserialize<CardDeckDto>(content, _options);
         return cardDeck;
     }
 
-    public async Task<List<CardDeckDto>> GetCardDecks()
-    {
-        var result = await _http.GetAsync($"/api/cardDecks");
-        var content = await result.Content.ReadAsStringAsync();
-        if (result.IsSuccessStatusCode == false)
-        {
-            throw new ApplicationException(content);
-        }
 
-        var cardDecks = JsonSerializer.Deserialize<List<CardDeckDto>>(content, _options);
-        return cardDecks;
-    }
 }

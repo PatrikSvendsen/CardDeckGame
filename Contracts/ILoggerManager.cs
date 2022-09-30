@@ -1,5 +1,8 @@
 ﻿namespace Contracts;
 
+/// <summary>
+/// Ett interface för att hantera de olika metoderna för logging. 
+/// </summary>
 public interface ILoggerManager
 {
     void LogInfo(string message);

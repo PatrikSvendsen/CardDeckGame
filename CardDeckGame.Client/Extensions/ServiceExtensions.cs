@@ -6,6 +6,7 @@ namespace CardDeckGame.Client.Extensions;
 
 public static class ServiceExtensions
 {
+    // Injecerar scope av de olika interfacen och classerna.
     public static void ConfigureServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<ICardDeckHttpRepository, CardDeckHttpRepository>();

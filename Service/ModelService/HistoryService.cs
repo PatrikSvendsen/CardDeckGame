@@ -7,6 +7,9 @@ using Shared.DataTransferObjects.History;
 
 namespace Service.ModelService;
 
+/// <summary>
+/// HistoryService classen injecerar loggern, mappern samt repository-managern. Samt hanterar alla metoder
+/// </summary>
 internal sealed class HistoryService : IHistoryService
 {
     private readonly IRepositoryManager _repository;

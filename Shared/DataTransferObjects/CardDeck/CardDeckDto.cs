@@ -2,8 +2,9 @@
 
 namespace Shared.DataTransferObjects.CardDeck;
 
-//public record CardDeckDto(int Id, string Name, int TotalCards, List<CardDto> Cards);
-
+/// <summary>
+/// DTO class i form av Record. För att hålla riktiga entiteten borta från att bli manipulerad. 
+/// </summary>
 public record CardDeckDto()
 {
     public int Id { get; init; }

@@ -14,15 +14,15 @@ builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSqlContext(builder.Configuration);
-builder.Services.AddAutoMapper(typeof(Program));
-builder.Services.ConfigureSwagger();
+builder.Services.AddAutoMapper(typeof(Program)); // <---- Injektar AutoMapper i program
+builder.Services.ConfigureSwagger(); // <--- Drar igång Swagger
 
 builder.Services.AddControllers()
-    .AddApplicationPart(typeof(CardDeckGame.Presentation.AssemblyReference).Assembly);
+    .AddApplicationPart(typeof(CardDeckGame.Presentation.AssemblyReference).Assembly); // <----- Hämtar controllers från CardDeckGame.Presentation.
 
 var app = builder.Build();
 
-var logger = app.Services.GetRequiredService<ILoggerManager>();
+var logger = app.Services.GetRequiredService<ILoggerManager>(); // <----- HÄmtar och kör Loggern
 app.ConfigureExceptionHandler(logger);
 
 if (app.Environment.IsProduction())

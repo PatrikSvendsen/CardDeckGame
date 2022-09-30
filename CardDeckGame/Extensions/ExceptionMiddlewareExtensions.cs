@@ -7,6 +7,7 @@ namespace CardDeckGame.Server.Extensions;
 
 public static class ExceptionMiddlewareExtensions
 {
+    // Används för att hantera expections och koppla ihop dem till loggern som loggar när ett fel kastas.
     public static void ConfigureExceptionHandler(this WebApplication app,
    ILoggerManager logger)
     {
